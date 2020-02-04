@@ -39,7 +39,7 @@ namespace BrestWeatherRestSharp
         [TestMethod]
         public void GetResponseByLocationAsJsonInCelcium()
         {
-            QueryBuilder query = new QueryBuilder().withOperation(operation).byCityName("Brest").withUnits("metrics");
+            QueryBuilder query = new QueryBuilder().withOperation(operation).byCityName("Brest").withUnits("metric");
             var response = query.ExecuteResponse();
 
             JObject obs = JObject.Parse(response.Content);
