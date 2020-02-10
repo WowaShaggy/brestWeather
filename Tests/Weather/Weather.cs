@@ -14,8 +14,8 @@ namespace BrestWeatherRestSharp.Tests.Weather
             var content = singleService.GetCurrentWeatherByName(city);
             ContentReader cr = new ContentReader(content);
 
-            Assert.That(cr.getId(), Is.EqualTo("629634"), "That is another city's id");
-            Assert.That(cr.getMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
+            Assert.That(cr.GetId(), Is.EqualTo("629634"), "That is another city's id");
+            Assert.That(cr.GetMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
         }
 
         [Test]
@@ -26,8 +26,8 @@ namespace BrestWeatherRestSharp.Tests.Weather
             var content = singleService.GetCurrentWeatherById(id);
             ContentReader cr = new ContentReader(content);
 
-            Assert.That(cr.getName(), Is.EqualTo("Brest"), "That is another city");
-            Assert.That(cr.getMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
+            Assert.That(cr.GetName(), Is.EqualTo("Brest"), "That is another city");
+            Assert.That(cr.GetMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
         }
 
         [Test]
@@ -38,8 +38,8 @@ namespace BrestWeatherRestSharp.Tests.Weather
             var content = singleService.GetCurrentWeatherById(id);
             ContentReader cr = new ContentReader(content);
 
-            Assert.That(cr.getName(), Is.EqualTo("Brest"), "That is another city");
-            Assert.That(cr.getMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
+            Assert.That(cr.GetName(), Is.EqualTo("Brest"), "That is another city");
+            Assert.That(cr.GetMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
         }
     }
 }

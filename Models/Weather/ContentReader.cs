@@ -11,17 +11,17 @@ namespace BrestWeatherRestSharp.Util
             _content = content;
         }
 
-        public string getId()
+        public string GetId()
         {
             return _content["id"].ToString();
         }
 
-        public string getName()
+        public string GetName()
         {
             return _content["name"].ToString();
         }
 
-        public double getMainTemp()
+        public double GetMainTemp()
         {
             return _content["main"]["temp"].ToObject<double>();
         }
