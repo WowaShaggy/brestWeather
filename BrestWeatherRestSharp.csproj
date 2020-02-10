@@ -159,20 +159,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clients\ISingleClient.cs" />
-    <Compile Include="Clients\SingleClient.cs" />
+    <Compile Include="API\Clients\ISingleClient.cs" />
+    <Compile Include="API\Clients\SingleClient.cs" />
     <Compile Include="Configuration\ContainerConfig.cs" />
-    <Compile Include="Models\Weather\Coord.cs" />
-    <Compile Include="Models\Weather\Clouds.cs" />
-    <Compile Include="Models\Weather\Main.cs" />
-    <Compile Include="Models\Weather\Response.cs" />
-    <Compile Include="Models\Weather\Sys.cs" />
-    <Compile Include="Models\Weather\Weather.cs" />
-    <Compile Include="Models\Weather\Wind.cs" />
-    <Compile Include="Services\ISingleService.cs" />
-    <Compile Include="Services\SingleService.cs" />
+    <Compile Include="Models\Weather\Model\Coord.cs" />
+    <Compile Include="Models\Weather\Model\Clouds.cs" />
+    <Compile Include="Models\Weather\Model\Main.cs" />
+    <Compile Include="Models\Weather\Model\Response.cs" />
+    <Compile Include="Models\Weather\Model\Sys.cs" />
+    <Compile Include="Models\Weather\Model\Weather.cs" />
+    <Compile Include="Models\Weather\Model\Wind.cs" />
+    <Compile Include="API\Services\ISingleService.cs" />
+    <Compile Include="API\Services\SingleService.cs" />
     <Compile Include="Tests\Weather\WithModels\ModelWeather.cs" />
     <Compile Include="Util\Constants.cs" />
+    <Compile Include="Models\Weather\ContentReader.cs" />
     <Compile Include="Util\QueryConstants.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Tests\Weather\Weather.cs" />

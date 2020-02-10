@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using BrestWeatherRestSharp.Util;
+using NUnit.Framework;
 
 namespace BrestWeatherRestSharp.Tests.Weather
 {
@@ -11,9 +12,10 @@ namespace BrestWeatherRestSharp.Tests.Weather
             string city = "Brest";
 
             var content = singleService.GetCurrentWeatherByName(city);
+            ContentReader cr = new ContentReader(content);
 
-            Assert.That(content["id"].ToString, Is.EqualTo("629634"), "That is another city's id");
-            Assert.That(content["main"]["temp"].ToObject<double>, Is.GreaterThan(0), "It's unexpected cold today as for Brest");
+            Assert.That(cr.getId(), Is.EqualTo("629634"), "That is another city's id");
+            Assert.That(cr.getMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
         }
 
         [Test]
@@ -22,9 +24,10 @@ namespace BrestWeatherRestSharp.Tests.Weather
             int id = 629634;
 
             var content = singleService.GetCurrentWeatherById(id);
+            ContentReader cr = new ContentReader(content);
 
-            Assert.That(content["name"].ToString, Is.EqualTo("Brest"), "That is another city");
-            Assert.That(content["main"]["temp"].ToObject<double>, Is.GreaterThan(0), "It's unexpected cold today as for Brest");
+            Assert.That(cr.getName(), Is.EqualTo("Brest"), "That is another city");
+            Assert.That(cr.getMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
         }
 
         [Test]
@@ -33,10 +36,10 @@ namespace BrestWeatherRestSharp.Tests.Weather
             string id = "629634";
 
             var content = singleService.GetCurrentWeatherById(id);
+            ContentReader cr = new ContentReader(content);
 
-            Assert.That(content["name"].ToString, Is.EqualTo("Brest"), "That is another city");
-            Assert.That(content["main"]["temp"].ToObject<double>, Is.GreaterThan(0), "It's unexpected cold today as for Brest");
+            Assert.That(cr.getName(), Is.EqualTo("Brest"), "That is another city");
+            Assert.That(cr.getMainTemp(), Is.GreaterThan(0), "It's unexpected cold today as for Brest");
         }
-
     }
 }

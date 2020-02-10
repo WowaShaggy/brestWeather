@@ -15,7 +15,7 @@ namespace BrestWeatherRestSharp.Services
             _singleClient = singleClient;
         }
 
-        public Response GetCurrentWeather(string q) //example of using manually added classes in Models directory 
+        public Response GetCurrentWeather(string q) //Example of using manually added classes in Models directory 
         {
             IRestResponse restResponse = _singleClient.GetCurrentWeather(q);
             Response response = JsonConvert.DeserializeObject<Response>(restResponse.Content);

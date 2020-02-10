@@ -6,7 +6,7 @@ namespace BrestWeatherRestSharp.Services
 {
     public interface ISingleService
     {
-        Response GetCurrentWeather(string q); //parameter Response is used to access manually added classes in Models directory
+        Response GetCurrentWeather(string q); //Parameter Response is used to access manually added classes in Models directory
 
         JObject GetCurrentWeatherByName(string q);
 
