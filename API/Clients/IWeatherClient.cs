@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrestWeatherRestSharp.Clients
 {
-    public interface ISingleClient
+    public interface IWeatherClient
     {
         IRestResponse GetCurrentWeather(string q);
 

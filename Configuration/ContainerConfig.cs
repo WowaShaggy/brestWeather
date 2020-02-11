@@ -15,9 +15,9 @@ namespace BrestWeatherRestSharp
             var builder = new ContainerBuilder();
 
             builder.RegisterInstance(BuildRestClient()).As<IRestClient>().Keyed<IRestClient>("weather"); ;
-            builder.Register(ctx => new SingleClient(ctx.ResolveKeyed<IRestClient>("weather"), Constants.Weather))
-                .As<ISingleClient>();
-            builder.RegisterType<SingleService>().As<ISingleService>();
+            builder.Register(ctx => new WeatherClient(ctx.ResolveKeyed<IRestClient>("weather"), Constants.Weather))
+                .As<IWeatherClient>();
+            builder.RegisterType<WeatherService>().As<IWeatherService>();
 
             return builder.Build();
         }

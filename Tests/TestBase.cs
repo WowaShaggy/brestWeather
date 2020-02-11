@@ -6,7 +6,7 @@ namespace BrestWeatherRestSharp
 {
     public abstract class TestBase
     {
-        protected ISingleService singleService;
+        protected IWeatherService singleService;
 
         [SetUp]
         public void Before()
@@ -14,7 +14,7 @@ namespace BrestWeatherRestSharp
             var container = ContainerConfig.Configure();
             using (var scope = container.BeginLifetimeScope())
             {
-                singleService = scope.Resolve<ISingleService>();
+                singleService = scope.Resolve<IWeatherService>();
             }
         }
     }

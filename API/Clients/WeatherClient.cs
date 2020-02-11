@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace BrestWeatherRestSharp.Clients
 {
-    public class SingleClient : ISingleClient
+    public class WeatherClient : IWeatherClient
     {
         private readonly IRestClient _restClient;
         private readonly string _data;
@@ -12,7 +12,8 @@ namespace BrestWeatherRestSharp.Clients
         private readonly string _operation;
         private readonly string _path;
 
-        public SingleClient(IRestClient restClient, string operation, string data = Constants.Data, double version = Constants.Version)
+        public WeatherClient(IRestClient restClient, string operation, 
+                            string data = Constants.Data, double version = Constants.Version)
         {
             _restClient = restClient;
             _data = data;

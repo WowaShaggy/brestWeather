@@ -6,11 +6,11 @@ using RestSharp;
 
 namespace BrestWeatherRestSharp.Services
 {
-    public class SingleService : ISingleService
+    public class WeatherService : IWeatherService
     {
-        private readonly ISingleClient _singleClient;
+        private readonly IWeatherClient _singleClient;
 
-        public SingleService(ISingleClient singleClient)
+        public WeatherService(IWeatherClient singleClient)
         {
             _singleClient = singleClient;
         }

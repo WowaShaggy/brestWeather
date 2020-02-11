@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace BrestWeatherRestSharp.Services
 {
-    public interface ISingleService
+    public interface IWeatherService
     {
         Response GetCurrentWeather(string q); //Parameter Response is used to access manually added classes in Models directory
 
